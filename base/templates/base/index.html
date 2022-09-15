@@ -1,0 +1,120 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="landing-page">
+    <div class="color-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <h1>
+                    A New Frontier In Research And Development
+                    <hr />
+                </h1>
+
+                <div class="row">
+                    <div class="col-md-12 pbutton">
+                        <div id="btn">
+                            <a href="#scrollspyHeading1" class="butn"><span class="noselect">Explore <i
+                                        class="bi bi-binoculars"></i></span></a>
+                            <div id="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!----Projects------------------------------------------------------------------------------------------------------------------------------------------------------>
+<div class="projects padding" id="scrollspyHeading1">
+    <div class="container-md">
+        <h1>Featured Projects</h1>
+        <br />
+        <p>
+            We provide specialized support services and expertise aimed at adding
+            value and filling gaps in existing capacity. Our main areas of
+            expertise are stated below
+        </p>
+        <br />
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-5">
+                    <div class="row g-0">
+                        <div class="col-md-5">
+                            <img src="{% static 'images/gallery9.webp' %}" class="img-fluid rounded-start" alt="..." />
+                        </div>
+                        {% for project in projects %}
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h2>
+                                    {{project.title}}
+                                </h2>
+                                <hr />
+                                <br />
+                                <p>
+                                    {{project.description}}
+                                </p>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="card-text">
+                                            <small>Client: {{project.client}}</small>
+                                        </p>
+                                        <p class="card-text">
+                                            <small>Status: {{project.status}}</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-5">
+                    <div class="row g-0">
+                        {% for project in projectss %}
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h2>
+                                    {{project.title}}
+                                </h2>
+                                <hr />
+                                <br />
+                                <p>
+                                    {{project.description}}
+                                </p>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="card-text">
+                                            <small>Client: {{project.client}}</small>
+                                        </p>
+                                        <p class="card-text">
+                                            <small>Status: {{project.status}}</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                        <div class="col-md-5">
+                            <img src="{% static 'images/gallery8.webp' %}" class="img-fluid rounded-start" alt="..." />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!----End of Projects sect------------------------------------------------------------------------------------------------------------------------------------------------------>
+{% endblock content %}

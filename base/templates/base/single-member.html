@@ -1,0 +1,21 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="profile padding">
+    <div class="container-md">
+        <br><br>
+        <h1>{{profile.name}}</h1>
+        <h4>
+            {{profile.title}}
+        </h4>
+        <div class="prof-pic">
+            <img src="{{profile.photo.url}}" alt="" />
+        </div>
+
+        <p>
+            {{profile.bio}}
+        </p>
+    </div>
+</div>
+{% endblock content %}

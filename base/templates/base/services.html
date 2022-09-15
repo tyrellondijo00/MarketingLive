@@ -1,0 +1,30 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="services padding top-part">
+    <div class="container-md">
+        <h1>Our Services</h1>
+        <br />
+        <p class="lead">
+            We provide specialized support services and expertise aimed at adding
+            value and filling gaps in existing capacity. Our main areas of
+            expertise are stated below
+        </p>
+        <br />
+
+        <div class="row">
+            {% for service in services %}
+            <div class="col-md-3">
+                <a href="{% url 'sservice' service.id %}">
+                    <i class="{{service.icon}}"></i>
+                    <p>
+                        {{service.name}}
+                    </p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

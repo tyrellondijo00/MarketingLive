@@ -1,0 +1,71 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<div class="team padding top-part" id="scrollspyHeading1">
+    <div class="container-md">
+        <h1>Our Management Team</h1>
+        <br />
+        <p>
+            Smart Vision is steered by a strong management team that comprise of the following experts:.
+        </p>
+    </div>
+</div>
+
+<div class="member container-md">
+    <div class="row justify-content-center">
+        {% for member in members %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{member.photo.url}}" class="card-img-top" alt="" />
+                <div class="card-body">
+                    <h5>{{member.name}}</h5>
+                    <p>{{member.title}}</p>
+
+                    <div id="btn">
+                        <a href="{% url 'member' member.id %}" class="butn"><span class="noselect">Read More</span></a>
+                        <div id="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <br>
+</div>
+
+<div class="team padding" id="scrollspyHeading1">
+    <div class="container-md">
+        <h1>Our Associates Team</h1>
+        <br />
+        <p>
+            In addition to our core team members,Smart Vision also has a large pool of associates in different areas
+            of
+            specialization who we work with for specific assignments. Below is a list of our associates
+        </p>
+    </div>
+</div>
+
+<div class="member container-md">
+    <div class="row justify-content-center">
+        {% for associate in associates %}
+        <div class="col-md-4">
+            <div class="card">
+                <img src="{{associate.photo.url}}" class="card-img-top" alt="" />
+                <div class="card-body">
+                    <h5>{{associate.name}}</h5>
+                    <p>{{associate.title}}</p>
+
+                    <div id="btn">
+                        <a href="{% url 'member' associate.id %}" class="butn"><span class="noselect">Read
+                                More</span></a>
+                        <div id="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div> -->
+
+<br><br>
+{% endblock content %}

@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="project-page padding top-part">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                {% for project in projects %}
+                <div class="card mb-3">
+                    <div class="row center g-0">
+
+                        <div class="col-md-4 text-center">
+                            <img src="{{project.client.logo.url}}" class="img-fluid rounded-start" alt="...">
+                        </div>
+
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h2>
+                                    {{project.title}}
+                                </h2>
+                                <hr />
+                                <br />
+                                <p>
+                                    {{project.description}}
+                                </p>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="card-text">
+                                            <small>Client: {{project.client}}</small>
+                                        </p>
+                                        <p class="card-text">
+                                            <small>Status: {{project.status}}</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<ul class="pagination" data-pagination>
+    {% for i in nums %}
+    <li><a class="page-link" href="?page={{forloop.counter}}">{{forloop.counter}}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
